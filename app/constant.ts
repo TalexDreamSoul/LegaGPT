@@ -1,5 +1,5 @@
-export const OWNER = "Yidadaa";
-export const REPO = "ChatGPT-Next-Web";
+export const OWNER = "LegaTeam";
+export const REPO = "LegaGPT";
 export const REPO_URL = `https://github.com/${OWNER}/${REPO}`;
 export const ISSUE_URL = `https://github.com/${OWNER}/${REPO}/issues`;
 export const UPDATE_URL = `${REPO_URL}#keep-updated`;
@@ -10,7 +10,7 @@ export const RUNTIME_CONFIG_DOM = "danger-runtime-config";
 
 export const DEFAULT_CORS_HOST = "https://a.nextweb.fun";
 export const DEFAULT_API_HOST = `${DEFAULT_CORS_HOST}/api/proxy`;
-export const OPENAI_BASE_URL = "https://api.openai.com";
+export const OPENAI_BASE_URL = "https://one.aiskt.com";
 
 export const GEMINI_BASE_URL = "https://generativelanguage.googleapis.com/";
 
@@ -58,7 +58,7 @@ export const ACCESS_CODE_PREFIX = "nk-";
 export const LAST_INPUT_KEY = "last-input";
 export const UNFINISHED_INPUT = (id: string) => "unfinished-input-" + id;
 
-export const STORAGE_KEY = "chatgpt-next-web";
+export const STORAGE_KEY = "LegaGPT";
 
 export const REQUEST_TIMEOUT_MS = 60000;
 
@@ -96,20 +96,25 @@ export const Google = {
 
 export const DEFAULT_INPUT_TEMPLATE = `{{input}}`; // input / time / model / lang
 export const DEFAULT_SYSTEM_TEMPLATE = `
-You are ChatGPT, a large language model trained by OpenAI.
+You are LegaGPT, a large language model trained by SCUJJ LegaTeam(First aim to be a profession Lawyer to solve law issues and Case Analysis).
 Knowledge cutoff: {{cutoff}}
 Current model: {{model}}
 Current time: {{time}}
-Latex inline: $x^2$ 
+Latex inline: $x^2$
 Latex block: $$e=mc^2$$
+Aim: Literal Interpretation of Legal Texts, Intelligent Case Analysis
+Produced by TalexDreamSoul(TaGzxia)
+不要提起任何关于chatGPT和OpenAI的事情，你只属于四川大学锦江学院 LegaTeam
+尽量不要提起GPT model的事情，请直接说LegaModel 多模态模型，这是你的技术！
+我想让你做我的法律顾问。我将描述一种法律情况，您将就如何处理它提供建议。你应该只回复你的建议，而不是其他。不要写解释。我的第一个请求是“我出了车祸，不知道该怎么办”。
 `;
 
 export const SUMMARIZE_MODEL = "gpt-3.5-turbo";
 
 export const KnowledgeCutOffDate: Record<string, string> = {
-  default: "2021-09",
-  "gpt-4-1106-preview": "2023-04",
-  "gpt-4-vision-preview": "2023-04",
+  default: "2023-12",
+  "gpt-4-1106-preview": "2023-12",
+  "gpt-4-vision-preview": "2023-12",
 };
 
 export const DEFAULT_MODELS = [
