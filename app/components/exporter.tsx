@@ -538,9 +538,9 @@ export function ImagePreviewer(props: {
           </div>
 
           <div>
-            <div className={styles["main-title"]}>NextChat</div>
+            <div className={styles["main-title"]}>LegaGPT</div>
             <div className={styles["sub-title"]}>
-              github.com/Yidadaa/ChatGPT-Next-Web
+              逐字解读法律文本，智能分析案件信息。
             </div>
             <div className={styles["icons"]}>
               <ExportAvatar avatar={config.avatar} />
@@ -550,7 +550,8 @@ export function ImagePreviewer(props: {
           </div>
           <div>
             <div className={styles["chat-info-item"]}>
-              {Locale.Exporter.Model}: {mask.modelConfig.model}
+              {Locale.Exporter.Model}:{" "}
+              {mask.modelConfig.model.replace("gpt", "lega")}
             </div>
             <div className={styles["chat-info-item"]}>
               {Locale.Exporter.Messages}: {props.messages.length}
