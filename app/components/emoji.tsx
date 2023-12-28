@@ -5,9 +5,11 @@ import EmojiPicker, {
 } from "emoji-picker-react";
 
 import { ModelType } from "../store";
+import NextImage from "next/image";
 
 import BotIcon from "../icons/bot.svg";
 import BlackBotIcon from "../icons/black-bot.svg";
+import LogoIcon from "../icons/logo.png";
 
 export function getEmojiUrl(unified: string, style: EmojiStyle) {
   // Whoever owns this Content Delivery Network (CDN), I am using your CDN to serve emojis
@@ -31,7 +33,11 @@ export function AvatarPicker(props: {
   );
 }
 
-export function Avatar(props: { model?: ModelType; avatar?: string }) {
+export function Avatar(props: {
+  model?: ModelType;
+  avatar?: string;
+  force?: boolean;
+}) {
   if (props.model) {
     return (
       <div className="no-dark">
@@ -44,9 +50,18 @@ export function Avatar(props: { model?: ModelType; avatar?: string }) {
     );
   }
 
+  if (props.force) {
+    return (
+      <div className="user-avatar">
+        {props.avatar && <EmojiAvatar avatar={props.avatar} />}
+      </div>
+    );
+  }
+
   return (
     <div className="user-avatar">
-      {props.avatar && <EmojiAvatar avatar={props.avatar} />}
+      <NextImage className="user-avatar-inner" src={LogoIcon} alt="" />
+      {/* {props.avatar && <EmojiAvatar avatar={props.avatar} />} */}
     </div>
   );
 }

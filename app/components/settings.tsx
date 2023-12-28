@@ -695,7 +695,7 @@ export function Settings() {
                 className={styles.avatar}
                 onClick={() => setShowEmojiPicker(true)}
               >
-                <Avatar avatar={config.avatar} />
+                <Avatar force={true} avatar={config.avatar} />
               </div>
             </Popover>
           </ListItem>

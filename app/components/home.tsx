@@ -29,6 +29,7 @@ import { AuthPage } from "./auth";
 import { getClientConfig } from "../config/client";
 import { ClientApi } from "../client/api";
 import { useAccessStore } from "../store";
+import { Watermark } from "@hirohe/react-watermark";
 
 export function Loading(props: { noLogo?: boolean }) {
   return (
@@ -136,34 +137,36 @@ function Screen() {
   }, []);
 
   return (
-    <div
-      className={
-        styles.container +
-        ` ${shouldTightBorder ? styles["tight-container"] : styles.container} ${
-          getLang() === "ar" ? styles["rtl-screen"] : ""
-        }`
-      }
-    >
-      {isAuth ? (
-        <>
-          <AuthPage />
-        </>
-      ) : (
-        <>
-          <SideBar className={isHome ? styles["sidebar-show"] : ""} />
+    <Watermark text="LegaGPT">
+      <div
+        className={
+          styles.container +
+          ` ${
+            shouldTightBorder ? styles["tight-container"] : styles.container
+          } ${getLang() === "ar" ? styles["rtl-screen"] : ""}`
+        }
+      >
+        {isAuth ? (
+          <>
+            <AuthPage />
+          </>
+        ) : (
+          <>
+            <SideBar className={isHome ? styles["sidebar-show"] : ""} />
 
-          <div className={styles["window-content"]} id={SlotID.AppBody}>
-            <Routes>
-              <Route path={Path.Home} element={<Chat />} />
-              <Route path={Path.NewChat} element={<NewChat />} />
-              <Route path={Path.Masks} element={<MaskPage />} />
-              <Route path={Path.Chat} element={<Chat />} />
-              <Route path={Path.Settings} element={<Settings />} />
-            </Routes>
-          </div>
-        </>
-      )}
-    </div>
+            <div className={styles["window-content"]} id={SlotID.AppBody}>
+              <Routes>
+                <Route path={Path.Home} element={<Chat />} />
+                <Route path={Path.NewChat} element={<NewChat />} />
+                <Route path={Path.Masks} element={<MaskPage />} />
+                <Route path={Path.Chat} element={<Chat />} />
+                <Route path={Path.Settings} element={<Settings />} />
+              </Routes>
+            </div>
+          </>
+        )}
+      </div>
+    </Watermark>
   );
 }
 
